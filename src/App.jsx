@@ -2,9 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import SubjectCard from "./components/SubjectCard";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [subjects, setSubjects] = useState([]);
+
+  const navigate = useNavigate();
 
   const getSubjects = async () => {
     try {
@@ -26,6 +29,12 @@ function App() {
           <SubjectCard subject={subject} key={index} />
         ))}
       </div>
+      <button
+        className="btn btn-primary mt-3"
+        onClick={() => navigate("/add-subject")}
+      >
+        <i className="bi bi-plus me-2"></i> Add New Subject
+      </button>
     </div>
   );
 }

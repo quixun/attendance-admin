@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function Subject() {
@@ -16,14 +16,11 @@ function Subject() {
     const getStudents = async () => {
         const res = await axios.get(`http://localhost:8000/students`)
         setStudents(res.data)
-        console.log('students:::before', res.data);
     }
 
     const getStudentsAttendanceInSubject = async (id) => {
         const res = await axios.get(`http://localhost:8000/attendances/students/${id}`)
         setAttendanceStudents(res.data)
-        console.log('setAttendanceStudents:::before', res.data);
-
     }
 
     const markAttendanceStatus = () => {

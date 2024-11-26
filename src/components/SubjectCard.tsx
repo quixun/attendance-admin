@@ -22,6 +22,7 @@ function SubjectCard({ subject }) {
           </Link>
         </div>
       </div>
+      <div></div>
     </div>
   );
 }

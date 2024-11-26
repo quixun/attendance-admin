@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import App from './App.jsx';
 import Subject from './pages/Subject/index.jsx';
+import AddSubject from './pages/AddSubject/index.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/subjects/:subjectId" element={<Subject />} />
+        <Route path="/add-subject" element={<AddSubject />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> */}
       </Routes>
